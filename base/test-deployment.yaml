@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: deploy-test
-          image: dbgurum/devweb:2.0
+          image: nginx
           ports:
             - containerPort: 5000
