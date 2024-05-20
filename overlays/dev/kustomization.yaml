@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: 083495778532.dkr.ecr.ap-northeast-2.amazonaws.com/
+  newName: 083495778532.dkr.ecr.ap-northeast-2.amazonaws.com/
+- name: 083495778532.dkr.ecr.ap-northeast-2.amazonaws.com/mogle_eks_repo
+  newName: 083495778532.dkr.ecr.ap-northeast-2.amazonaws.com/mogle_eks_repo
+  newTag: abc1cd
+resources:
+- ../../base
+patchesStrategicMerge:
+- deployment-patch.yaml
+- service-patch.yaml
