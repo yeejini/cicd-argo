@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devweb-deployment
+spec:
+  selector:
+    matchLabels:
+      app: my-devweb
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: my-devweb
+    spec:
+      containers:
+      - name: devweb-containers
+        image: dbgurum/devweb:2.0
+        ports:
+        - containerPort: 80
