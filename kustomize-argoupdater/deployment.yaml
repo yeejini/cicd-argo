@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample
+  name: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sample
+      app: nginx
   template:
     metadata:
       labels:
-        app: sample
+        app: nginx
     spec:
       containers:
       - image: docker.io/kangyejini/argoupdater:1.0
-        name: sample
+        name: nginx
         ports:
         - containerPort: 80
